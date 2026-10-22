@@ -2,11 +2,11 @@
 
 A Retrieval-Augmented Generation (RAG) application that allows users to chat with a company policy PDF. Built with **LangChain**, **Google Gemini**, **ChromaDB**, and **Streamlit**.
 
-## 🎯 Business Problem
+## Business Problem
 
 Employees waste hours searching through dense corporate handbooks to find specific policies (e.g., Health & Safety, IT Security). This bot acts as an instant, accurate HR assistant that strictly answers based *only* on the provided document, eliminating hallucinations.
 
-## 🏗️ Architecture
+## Architecture
 
 ```mermaid
 graph TD
@@ -21,7 +21,7 @@ graph TD
 - **Storage** — Stores the embeddings locally using ChromaDB (a vector database).
 - **Retrieval & Generation (`app.py` / `chat.py`)** — When a user asks a question, the app retrieves the top 5 most relevant chunks and sends them to `gemini-3.8-flash` to generate a strict, context-aware answer.
 
-## 🚀 How to Run Locally
+## How to Run Locally
 
 1. **Clone this repository.**
 
@@ -66,7 +66,7 @@ graph TD
    - For the Web UI: `streamlit run app.py`
    - For the Terminal CLI: `python chat.py`
 
-## 🧠 Technical Optimizations
+## Technical Optimizations
 
 - **Transport Layer Fix** — Configured `transport="rest"` to ensure compatibility with new Google API key formats and resolve DNS/gRPC connection hangs.
 - **Retrieval Tuning** — Increased the retriever `k` value from 3 to 5 to improve the accuracy of retrieving specific statistical data (e.g., the 1.5° climate target) from dense text.
